@@ -1,0 +1,38 @@
+﻿@model IEnumerable<BTH1.Models.TLoaiSp>
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+
+@{
+    ViewData["Title"] = "DanhSachLoaiSanPham";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h1>DanhSachLoaiSanPham</h1>
+
+<p>
+    <a asp-action="ThemLoaiSanPham">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Loai)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Loai)
+            </td>
+            <td>
+                    <a asp-action="SuaLoaiSanPham" asp-route-maloai="@item.MaLoai">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.MaLoai">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.MaLoai">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,62 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AjaxControlToolkit" Version="20.1.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Session" Version="2.2.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.3" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.3" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.3">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.jQuery.Unobtrusive.Ajax" Version="3.2.6" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.13" />
+    <PackageReference Include="X.PagedList" Version="8.4.6" />
+    <PackageReference Include="X.PagedList.Mvc.Core" Version="8.4.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\ogani\fonts\ElegantIcons.svg" />
+    <None Include="wwwroot\ogani\fonts\fontawesome-webfont.svg" />
+    <None Include="wwwroot\ogani\fonts\fontawesome-webfont.woff2" />
+    <None Include="wwwroot\ogani\js\bootstrap.min.js" />
+    <None Include="wwwroot\ogani\js\jquery-3.3.1.min.js" />
+    <None Include="wwwroot\ogani\js\jquery-ui.min.js" />
+    <None Include="wwwroot\ogani\js\jquery.nice-select.min.js" />
+    <None Include="wwwroot\ogani\js\jquery.slicknav.js" />
+    <None Include="wwwroot\ogani\js\main.js" />
+    <None Include="wwwroot\ogani\js\mixitup.min.js" />
+    <None Include="wwwroot\ogani\js\owl.carousel.min.js" />
+    <None Include="wwwroot\ogani\sass\style.scss" />
+    <None Include="wwwroot\ogani\sass\_base.scss" />
+    <None Include="wwwroot\ogani\sass\_blog-details.scss" />
+    <None Include="wwwroot\ogani\sass\_blog-sidebar.scss" />
+    <None Include="wwwroot\ogani\sass\_blog.scss" />
+    <None Include="wwwroot\ogani\sass\_breadcrumb.scss" />
+    <None Include="wwwroot\ogani\sass\_checkout.scss" />
+    <None Include="wwwroot\ogani\sass\_contact.scss" />
+    <None Include="wwwroot\ogani\sass\_footer.scss" />
+    <None Include="wwwroot\ogani\sass\_header.scss" />
+    <None Include="wwwroot\ogani\sass\_hero.scss" />
+    <None Include="wwwroot\ogani\sass\_home-page.scss" />
+    <None Include="wwwroot\ogani\sass\_mixins.scss" />
+    <None Include="wwwroot\ogani\sass\_responsive.scss" />
+    <None Include="wwwroot\ogani\sass\_shop-details.scss" />
+    <None Include="wwwroot\ogani\sass\_shop-grid.scss" />
+    <None Include="wwwroot\ogani\sass\_shoping-cart.scss" />
+    <None Include="wwwroot\ogani\sass\_sidebar.scss" />
+    <None Include="wwwroot\ogani\sass\_variable.scss" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Areas\Admin\Data\" />
+    <Folder Include="Areas\Admin\Models\" />
+  </ItemGroup>
+
+</Project>

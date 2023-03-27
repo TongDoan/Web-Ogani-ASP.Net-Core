@@ -1,0 +1,56 @@
+﻿@model IEnumerable<TLoaiSp>
+<div class="col-lg-3">
+    <div class="hero__categories">
+        <div class="hero__categories__all">
+            <i class="fa fa-bars"></i>
+            <span>All departments</span>
+        </div>
+        <ul>
+            @foreach(var loaisp in Model){
+                var getUrl = "https://localhost:7230/api/productapi/" + @loaisp.MaLoai;
+                <li><a style="cursor:pointer" onclick="showProductByCategory('@getUrl')">@loaisp.Loai</a></li>
+               // <li><a asp-controller="Home" asp-action="SanPhamTheoLoai" asp-route-maloai="@loaisp.MaLoai" )">@loaisp.Loai</a></li>
+            }
+        </ul>
+    </div>
+</div>
+<script>
+    function showProductByCategory(getUrl){
+        var str = '';
+        $.ajax({
+            type: 'GET',
+            url: getUrl,
+            dataType: 'json',
+            success: function(data){
+                $.each(data,function(key,val){
+                    str += `<div class="col-lg-3 col-md-4 col-sm-6 mix oranges fresh-meat" >
+                                <div class="featured__item" >
+                                    <div class="featured__item__pic set-bg" data - setbg="`
+                    var linkImage = '../ProductImages/Images/Images/' + $.trim(val.anhDaiDien);
+                    str += linkImage;
+                    str += `"style = "background-image: url(&quot;`
+                    str += linkImage;
+                    str += `&quot;); " >
+                                        <ul class="featured__item__pic__hover" >
+                                            <li><a href="#" > <i class="fa fa-heart" > </i></a > </li>
+                                                <li> <a href="#" > <i class="fa fa-retweet" > </i></a > </li>
+                                                    <li> <a href="#" > <i class="fa fa-shopping-cart" > </i></a > </li>
+                                                        </ul>
+                                                        </div>
+                                                        <div class="featured__item__text" >
+                                                                <h6><a href="/home/ChiTietSanPham?MaSp="`;
+                    str += $.trim(val.maSp);
+                    str += `" >`;
+                    str += $.trim(val.tenSp);
+                    str += '</a></h6><h5>';
+                    str += val.giaNhoNhat.toString();
+                    str += ` đồng </h5></div></div></div>`;
+                });
+                $('#displayProduct').html(str);
+            },
+            Error: function(xhr){
+                alert(xhr.responseText);
+            }
+        });
+    }
+</script>

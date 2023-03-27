@@ -1,0 +1,28 @@
+﻿
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Page Title</title>
+</head>
+<body>
+
+    <h1>This is a Heading</h1>
+    <p>This is a paragraph.</p>
+    <div class="container">
+        <div id="displayProducts"></div>
+    </div>
+    <script>
+        $('document').ready(function(){
+            var str = '';
+            $.getJSON('https://localhost:7230/api/productapi',function(data){
+                $.each(data, function(key,val){
+                    str += '<p>' + val.tenSp + '</p>';
+                })
+            })
+        })
+    </script>
+</body>
+</html>
